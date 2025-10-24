@@ -1,0 +1,10 @@
+# Enable URL rewriting for API routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /rehan/
+  # Route the base path to public/index.php to avoid directory listing
+  RewriteRule ^$ public/index.php [QSA,L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ public/index.php [QSA,L]
+</IfModule>
