@@ -1,0 +1,224 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #0b1324; color: #e6ecff; }
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+h1 { margin: 0 0 16px; font-size: 24px; }
+section { background: #121a33; border: 1px solid #243055; border-radius: 8px; padding: 16px; margin: 12px 0; }
+.card { background: #0f1730; border: 1px solid #1f2a4a; border-radius: 8px; padding: 12px; margin-top: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin: 8px 0; }
+label { display: flex; flex-direction: column; font-size: 12px; gap: 6px; }
+input, select, button { padding: 10px; border-radius: 6px; border: 1px solid #2a3a6b; background: #0a1124; color: #e6ecff; }
+/* Full-width form controls (not buttons) */
+input, select { width: 100%; }
+input:focus, select:focus { outline: 2px solid #3a57cc; }
+button { cursor: pointer; background: #3855cc; border: 1px solid #4062e6; }
+/* Make all buttons smaller */
+button { padding: 6px 10px; font-size: 12px; }
+button:hover { background: #2e46a8; }
+.muted { color: #98a4cc; font-size: 12px; margin-top: 6px; }
+.hidden { display: none !important; }
+
+/* Alerts (form notifications) */
+.alert {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.alert-success {
+  background: #10361f;
+  border-color: #1d6f3e;
+  color: #b1f7c7;
+}
+.alert-error {
+  background: #3a0f14;
+  border-color: #7a1f2a;
+  color: #ffc7cf;
+}
+
+/* Tabs */
+.tabs { display: flex; gap: 8px; margin: 12px 0; }
+/* Right-align the One Way / Two Way sub-tabs in Transactions */
+#tx-mode-tabs { justify-content: flex-end; }
+.tab-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #243055;
+  background: #0a1124;
+  color: #e6ecff;
+  cursor: pointer;
+  font-size: 12px;
+}
+.tab-btn:hover { background: #1b2a5e; }
+.tab-btn.active {
+  background: #3855cc;
+  border-color: #4062e6;
+  color: #ffffff;
+}
+.tab-btn:focus { outline: 2px solid #3a57cc; outline-offset: 2px; }
+
+/* Responsive, striped tables */
+.responsive { width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; white-space: nowrap; }
+th, td { border: none; padding: 6px 8px; text-align: left; font-size: 12px; }
+th { background: #3855cc; position: sticky; top: 0; z-index: 1; }
+tbody tr:nth-child(odd) { background: #25396a !important; }
+tbody tr:nth-child(even) { background: #1e2f59; }
+tbody tr:hover { background: #33519e; }
+.text-center{
+    text-align-last: center;
+}
+.mt-50px{
+  margin-top: 50px;
+}
+.mt-22px{
+  margin-top: 22px;
+}
+.mt-10px{
+  margin-top: 10px;
+}
+.btn-h35px{
+  height: 35px !important;
+}
+.title-desc{
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 10px;
+    font-family: monospace;
+    font-style: italic;
+}
+.float-end{
+    float: right;
+}
+/* Specific tables keep same look */
+#accounts-table, #rep-day-table, #rep-ledger-table, #rep-comm-table, #tx-table { width: 100%; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+.faq-item { width: 100%; }
+.faq-q {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  border-radius: 4px 4px 0px 0px;
+  cursor: pointer;
+  color: #222;
+  position: relative;
+  font-size: 16px;
+}
+/* Hover: make text white as requested, with darker background for contrast */
+.faq-q:hover {
+  color: #fff;
+  background: #3855cc;
+  border-color: #3855cc;
+}
+.faq-q:hover::after { color: #fff; }
+/* Up arrow when closed (per request) */
+.faq-q::after {
+  content: '▲';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+}
+/* Down arrow when open (per request) */
+.faq-item.open .faq-q::after {
+  content: '▼';
+}
+.faq-a {
+  border: 1px solid #3855cc;
+  border-radius: 0px 0px 4px 4px;
+  padding: 10px 12px;
+  background: #3855cc;
+  display: none;
+  color: #fff;
+  font-size: 12px;
+}
+.faq-item.open .faq-a { display: block; }
+.checkBoxPayLater{
+    width: 30px;
+    height: 30px;
+}
+.row-reverse{
+  flex-flow: row-reverse;
+}
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #fff;
+  background-color: #6c757d;
+}
+.badge-pill { border-radius: 9999px; }
+.badge-danger { background-color: #d9534f; }
+.badge-warning { background-color: #f0ad4e; color: #222; }
+.badge-success { background-color: #5cb85c; }
+/* Make Admin Users form buttons extra small */
+#admin-create-btn,
+#admin-cancel-edit {
+  padding: 3px 8px;
+  font-size: 11px;
+  line-height: 1;
+  height: auto;
+  min-height: 0;
+  border-radius: 4px;
+}
+
+.pre { white-space: pre; max-height: 300px; overflow: auto; background: #0a1124; padding: 12px; border-radius: 6px; border: 1px solid #243055; }
+
+/* Session menu dropdown items */
+#session-menu { background: #0f1730; border: 1px solid #1f2a4a; border-radius: 8px; overflow: hidden; }
+#session-menu .dropdown-item {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  background: transparent !important;
+  border: none !important;
+  color: #e6ecff;
+}
+#session-menu .dropdown-item:hover { background: #2e46a8 !important; color: #ffffff !important; }
+#session-menu .dropdown-item:focus { background: #2e46a8 !important; color: #ffffff !important; outline: none; }
+
+/* Password visibility toggle */
+.pw-container { position: relative; width: 100%; display: block; }
+.pw-container > input[type="password"],
+.pw-container > input[type="text"] {
+  padding-right: 34px;
+}
+.pw-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #98a4cc;
+}
+.pw-toggle:hover { color: #e6ecff; }
+.pw-toggle svg { display: block; width: 18px; height: 18px; }
+
+/* Responsive form grid: default 1, sm>=640px 2, lg>=1024px 3, 2xl>=1536px 4 */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .form-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .form-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1536px) {
+  .form-grid { grid-template-columns: repeat(4, 1fr); }
+}
